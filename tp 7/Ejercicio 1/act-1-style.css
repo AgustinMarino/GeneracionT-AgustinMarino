@@ -1,0 +1,19 @@
+.grid-container {
+    display: grid; /* 1. Crear un contenedor con display: grid */
+    grid-template-columns: 150px 150px; /* 2. Definir dos columnas de 150px cada una */
+    grid-template-rows: 100px 100px; /* 2. Definir dos filas de 100px cada una */
+    gap: 10px; /* Espacio entre las celdas (opcional, pero ayuda a visualizar) */
+    border: 2px solid #333; /* Borde para ver el contenedor */
+    padding: 10px;
+    width: fit-content; /* Ajustar el ancho al contenido */
+}
+
+.grid-item {
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    border: 1px solid #0056b3;
+}
