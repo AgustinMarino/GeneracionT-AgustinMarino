@@ -4,23 +4,25 @@
     margin-left: 41%;
     grid-template-rows: 100px 100px; /* 2. Definir dos filas de 100px cada una */
     gap: 10px; /* Espacio entre las celdas (opcional, pero ayuda a visualizar) */
-    border: 2px solid #ff0000; /* Borde para ver el contenedor */
+    border: 3px solid #000000; /* Borde para ver el contenedor */
     padding: 10px;
     width: fit-content; /* Ajustar el ancho al contenido */
+    border-radius: 10px;
 }
 
 .grid-item {
-    background-color: #ff0000;
+    background-color: rgb(161, 127, 255);
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
-    border: 1px solid #b30000;
+    border: 3px solid #000000;
+    border-radius: 10px;
 }
 .titulo{
     display: flex;
-    background-color: aquamarine;
+    background-color: rgb(161, 127, 255);
     align-items: center;
     justify-content: center;
     font-size: 40px;
