@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2 {
+    color: #0056b3;
+}
+
+.contenedor-ejemplo {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Estilos para display: inline */
+.inline-element {
+    display: inline;
+    background-color: #e0f7fa;
+    border: 1px solid #00bcd4;
+    padding: 5px;
+    margin: 5px; /* Solo margin-left y margin-right tendrán efecto visual */
+    /* width y height no tendrán efecto */
+}
+
+/* Estilos para display: block */
+.block-element {
+    display: block;
+    background-color: #e8f5e9;
+    border: 1px solid #4caf50;
+    padding: 10px;
+    margin: 10px 0; /* Todos los margins tienen efecto */
+    width: 80%; /* El width tendrá efecto */
+    height: 50px; /* El height tendrá efecto */
+}
+
+/* Estilos para display: inline-block */
+.inline-block-element {
+    display: inline-block;
+    background-color: #fff3e0;
+    border: 1px solid #ff9800;
+    padding: 8px;
+    margin: 8px; /* Todos los margins tienen efecto */
+    width: 120px; /* El width tendrá efecto */
+    height: 60px; /* El height tendrá efecto */
+    text-align: center;
+    line-height: 60px; /* Centra el texto verticalmente */
+    box-sizing: border-box; /* Incluye padding y border en el width/height */
+}
+
+/* Estilos para display: none al pasar el mouse */
+.hover-container {
+    border: 1px dashed #ccc;
+    padding: 10px;
+    background-color: #f0f0f0;
+    display: inline-block; /* Para que el contenedor sea más pequeño */
+}
+
+.hidden-on-hover {
+    background-color: #ffeb3b;
+    border: 1px solid #fbc02d;
+    padding: 5px 10px;
+    margin-left: 10px;
+    transition: all 0.3s ease; /* Transición suave para la reaparición */
+}
+
+.toggle-button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Regla para ocultar el elemento cuando el mouse está sobre el botón */
+.hover-container:hover .hidden-on-hover {
+    display: none;
+}

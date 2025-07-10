@@ -1,0 +1,59 @@
+body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f8f8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .mensaje-info {
+            position: relative; /* Esencial para posicionar el pseudo-elemento */
+            background-color: #e0f7fa; /* Color de fondo suave */
+            border-left: 5px solid #00bcd4; /* Borde decorativo a la izquierda */
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+            font-size: 1.1em;
+            max-width: 400px;
+            text-align: center;
+            overflow: hidden; /* Asegura que el pseudo-elemento no se salga del contenedor */
+        }
+
+        /* Estilo para el pseudo-elemento ::after */
+        .mensaje-info::after {
+            content: '✉️​'; /* Puedes usar un ícono emoji o un carácter Unicode */
+            position: absolute;
+            top: 50%;
+            left: -30px; /* Inicia fuera del mensaje */
+            transform: translateY(-50%); /* Centra verticalmente */
+            font-size: 1.8em;
+            opacity: 0; /* Inicialmente invisible */
+            color: #ffeb3b; /* Color para el ícono/decoración */
+            animation: deslizarYDesvanecer 4s ease-out infinite; /* Animación cíclica */
+            animation-delay: 0.1s; /* Pequeño retraso antes de que empiece */
+        }
+
+        /* --- Definición de la animación de Keyframes --- */
+        @keyframes deslizarYDesvanecer {
+            0% {
+                left: -30px; /* Comienza fuera a la izquierda */
+                opacity: 0; /* Invisible */
+            }
+            20% {
+                left: 10px; /* Se mueve hacia adentro */
+                opacity: 1; /* Completamente visible */
+            }
+            80% {
+                left: calc(100% - 30px); /* Se desplaza hacia la derecha (ajusta según el tamaño del ícono) */
+                opacity: 1; /* Permanece visible */
+            }
+            100% {
+                left: calc(100% + 10px); /* Termina fuera por la derecha */
+                opacity: 0; /* Se desvanece */
+            }
+        }

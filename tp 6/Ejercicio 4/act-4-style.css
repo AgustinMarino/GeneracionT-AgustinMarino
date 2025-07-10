@@ -1,0 +1,140 @@
+/*grow y order*/
+
+.contenedor-flex{
+    display: flex;
+    background-color: chocolate;
+    height: 200px;
+}
+.contenedor-flex div{
+    display: flex;
+    flex-grow: 5;
+    margin: 5px;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+.contenido1{
+    display: flex;
+    background-color: rgb(223, 89, 89);
+    border: 3px black solid;
+    order: 4;
+}
+.contenido2{
+    display: flex;
+    background-color: rgb(89, 181, 223);
+    border: 3px black solid;
+    order: 3;
+}
+.contenido3{
+    display: flex;
+    background-color: rgb(223, 169, 89);
+    border: 3px black solid;
+    order: 2;
+}
+.contenido4{
+    display: flex;
+    background-color: rgb(89, 223, 149);
+    border: 3px black solid;
+    order: 1;
+
+}
+
+/*shrink*/
+
+.shrink{
+    display: flex;
+    background-color: rgb(155, 129, 179);
+    border: 5px black solid;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.cosa1{
+    display: flex;
+    background-color: rgb(198, 199, 128);
+    border: 3px black solid;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.cosa2{
+    display: flex;
+    background-color: rgb(70, 194, 126);
+    border: 3px black solid;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    flex-shrink: 15;
+}
+
+.cosa3{
+    display: flex;
+    background-color: rgb(139, 139, 139);
+    border: 3px black solid;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.cosa4{
+    display: flex;
+    background-color: rgb(81, 136, 238);
+    border: 3px black solid;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+/*basis*/
+
+.basis{
+    display: flex;
+    background-color: brown;
+    border: 5px black solid;
+    border-radius: 10px;
+}
+
+.obj1{
+    display: flex;
+    background-color: rgb(222, 243, 144);
+    padding: 10px;
+    margin: 10px;
+    border: 5px black solid;
+}
+
+.obj2{
+    display: flex;
+    background-color: rgb(144, 243, 243);
+    padding: 10px;
+    margin: 10px;
+    border: 5px black solid;
+    flex-basis: 700px; /*al aplicar flex-basis le asigo un tamaño pedeterminado y maximo al objeto 2,
+      si estira la pestaña mientras esta minimizada podra ver que el onjeto 2 no ocupa mas de 700 px*/
+}
+
+.obj3{
+    display: flex;
+    background-color: rgb(144, 243, 149);
+    padding: 10px;
+    margin: 10px;
+    border: 5px black solid;
+}
+
+.obj4{
+    display: flex;
+    background-color: rgb(243, 203, 144);
+    padding: 10px;
+    margin: 10px;
+    border: 5px black solid;
+}

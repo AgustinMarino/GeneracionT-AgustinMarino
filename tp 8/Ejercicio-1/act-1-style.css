@@ -1,0 +1,39 @@
+.contenedor-borde {
+    position: relative; /* **Importante**: Permite posicionar ::before/::after */
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: #333;
+    font-weight: bold;
+}
+
+.contenedor-borde::before {
+    content: ''; /* **Obligatorio** para que el pseudo-elemento se genere */
+    position: absolute;
+    top: -5px;    /* Expande 5px hacia arriba */
+    left: -5px;   /* Expande 5px hacia la izquierda */
+    right: -5px;  /* Expande 5px hacia la derecha */
+    bottom: -5px; /* Expande 5px hacia abajo */
+    background-color: red; /* Color inicial del "borde" */
+    z-index: -1;  /* Envía el "borde" detrás del contenido del div */
+
+    /* **Propiedad clave**: Aplicamos la animación */
+    animation: cambiarColorBorde 0.5s infinite alternate;
+}
+
+/* --- */
+
+/* **Definición de los keyframes de la animación** */
+@keyframes cambiarColorBorde {
+    0% {
+        background-color: red; /* Inicio de la animación: rojo */
+    }
+    100% {
+        background-color: rgb(0, 255, 42); /* Al final: azul */
+    }
+}

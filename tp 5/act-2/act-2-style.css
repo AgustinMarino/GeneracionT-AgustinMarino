@@ -1,0 +1,46 @@
+#div-1{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    margin: 100px;
+    border: 10px groove rgb(253, 54, 54) ;
+    justify-content: center;
+    align-items: center;
+    position: static;
+}
+
+#div-2{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    margin-left: 15%;
+    border: 10px groove rgb(241, 152, 34) ;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#div-3{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    margin: 30px;
+    border: 10px groove rgb(74, 201, 123) ;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#div-4{
+    display: flex;
+    width: 100px;
+    height: 100px;
+    margin: 15px;
+    border: 10px groove rgb(57, 117, 247) ;
+    justify-content: center;
+    align-items: center; 
+    position: fixed;
+}

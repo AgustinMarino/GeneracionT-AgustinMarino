@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif; /* Fuente por defecto para el body */
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #0056b3;
+    font-size: 2.5em; /* Tamaño de fuente grande para H1 */
+}
+
+/* Aplicación de la fuente de Google Fonts */
+.titulo-con-fuente {
+    font-family: 'Roboto Mono', monospace; /* Aplica Roboto, con sans-serif como respaldo */
+    color: #28a745; /* Un color diferente para destacar */
+    font-size: 2.2em; /* Tamaño de fuente un poco más pequeño que H1 */
+    font-weight: 700; /* Aplica el peso Bold si lo importaste */
+}
+
+.parrafo-con-fuente {
+    font-family: 'Roboto Mono', monospace; /* Aplica Roboto */
+    font-size: 1.1em;
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+    font-weight: 400; /* Aplica el peso Regular si lo importaste */
+}
+
+/* Estilos para el resto del contenido */
+h3 {
+    font-family: 'Anton SC', sans-serif; /* Aplica Roboto */
+    color: #dc3545;
+    margin-top: 40px;
+}
+
+#h3{
+    font-family: 'Anton SC', sans-serif; /* Aplica Roboto */
+}

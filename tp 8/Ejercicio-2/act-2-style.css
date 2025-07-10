@@ -1,0 +1,62 @@
+   body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .boton-onda {
+            position: relative; /* Necesario para posicionar el pseudo-elemento */
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            overflow: hidden; /* Oculta el pseudo-elemento cuando está fuera del botón */
+            transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+            z-index: 1; /* Asegura que el botón esté por encima de la onda si no se desvanece por completo */
+        }
+
+        .boton-onda:hover {
+            background-color: #003166; /* Color de fondo al pasar el cursor */
+        }
+
+        .boton-onda::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.7); /* Blanco semitransparente para el brillo */
+            border-radius: 50%; /* Hace que sea un círculo */
+            opacity: 0; /* Invisible por defecto */
+            transform: translate(-50%, -50%); /* Centra el pseudo-elemento */
+            z-index: 0; /* Asegura que la onda esté detrás del texto del botón */
+        }
+
+        .boton-onda:hover::after {
+            animation: ondaBrillo 0.7s ease-out forwards; /* Aplica la animación al hacer hover */
+        }
+
+        /* --- Definición de la animación de Keyframes --- */
+        @keyframes ondaBrillo {
+            0% {
+                transform: translate(-50%, -50%) scale(0); /* Empieza muy pequeño */
+                opacity: 0; /* Invisible */
+            }
+            50% {
+                opacity: 1; /* Completamente visible a la mitad de la expansión */
+                background-color: rgba(0, 0, 0, 0.6); /* Color al máximo de brillo */
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(20); /* Se expande significativamente */
+                opacity: 0; /* Se desvanece */
+                background-color: rgba(255, 255, 255, 0); /* Transparente al final */
+            }
+        }

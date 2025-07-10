@@ -1,0 +1,87 @@
+body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f7f6;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .tarjeta-info {
+            position: relative; /* Esencial para posicionar el pseudo-elemento */
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 350px;
+            text-align: center;
+            overflow: hidden; /* En caso de que el pseudo-elemento se salga un poco */
+            transition: transform 0.3s ease; /* Pequeña animación al pasar el ratón por la tarjeta */
+        }
+
+        .tarjeta-info:hover {
+            transform: translateY(-5px); /* Eleva ligeramente la tarjeta al pasar el ratón */
+        }
+
+        .tarjeta-info h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .tarjeta-info p {
+            color: #7f8c8d;
+            line-height: 1.6;
+            font-size: 1em;
+            margin-bottom: 0;
+        }
+
+        /* Estilo para el pseudo-elemento ::before (el distintivo "INFO") */
+        .tarjeta-info::before {
+            content: 'INFO'; /* Texto del distintivo */
+            position: absolute;
+            top: 15px;      /* Posición superior */
+            right: 15px;    /* Posición derecha */
+            background-color: #e74c3c; /* Color de fondo del distintivo */
+            color: white;
+            font-size: 0.8em;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            /* Animación pulsante */
+            animation: pulsarDistintivo 1.5s infinite ease-in-out;
+            transform-origin: center center; /* Asegura que la escala se aplique desde el centro */
+            z-index: 10; /* Asegura que esté por encima del contenido */
+        }
+
+        /* --- Definición de la animación de Keyframes --- */
+        @keyframes pulsarDistintivo {
+            0% {
+                transform: scale(1); /* Tamaño normal */
+                opacity: 1; /* Opacidad normal */
+            }
+            50% {
+                transform: scale(1.1); /* Ligeramente más grande */
+                opacity: 0.8; /* Ligeramente más transparente */
+            }
+            100% {
+                transform: scale(1); /* Vuelve al tamaño normal */
+                opacity: 1; /* Vuelve a la opacidad normal */
+            }
+        }
+
+        /* Opcional: Si prefieres una animación rotatoria, descomenta el siguiente keyframe
+           y cambia la propiedad 'animation' en .tarjeta-info::before a:
+           animation: rotarDistintivo 3s infinite linear;
+        */
+        /*
+        @keyframes rotarDistintivo {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        */

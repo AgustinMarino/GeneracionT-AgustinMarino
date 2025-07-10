@@ -1,0 +1,21 @@
+.contenedor{
+    display: flex;
+    background-color: coral;
+    justify-content: center;
+    padding: 10px;
+    margin: 100px;
+    height: 200px;
+    flex-wrap: wrap;
+    border: 5px black solid;
+    border-radius: 10px;
+    align-content: center; /*alinea todo el contenido del contenedor en el centro de este*/
+}
+.contenido{
+    display: flex;
+    background-color: bisque;
+    justify-content: center; /*alinea todos los caracteres del contenido del contenedor horizontalmente*/
+    align-items: center; /*alinea todos los caracteres del contenido del contenedor verticalmente*/
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
