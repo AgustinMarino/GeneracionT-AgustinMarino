@@ -1,0 +1,147 @@
+/* Default styles for large screens (desktop) */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f8f8f8;
+            line-height: 1.6;
+            color: #333;
+            font-size: 18px; /* Base font size for desktop */
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em; /* Font size for the main title */
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        main {
+            flex: 3;
+            background-color: #fff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        aside {
+            flex: 1;
+            background-color: #ecf0f1;
+            padding: 2rem;
+            margin-left: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: auto;
+            font-size: 0.9em;
+        }
+
+        /* --- RESPONSIVE IMAGES --- */
+        img {
+            max-width: 100%; /* Ensures the image doesn't overflow its container */
+            height: auto; /* Maintains the image's aspect ratio */
+            display: block; /* Removes extra space below the image */
+            margin-bottom: 1em; /* Space below the image */
+            border-radius: 5px; /* Slightly rounded borders for images */
+        }
+
+        /* --- TYPOGRAPHY AND LAYOUT FOR TABLETS (width less than 768px) --- */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* Reduce base font size for tablets */
+                line-height: 1.5;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .container {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
+
+            main {
+                padding: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            aside {
+                margin-left: 0;
+                margin-top: 0;
+                order: -1; /* Sidebar before main content */
+                margin-bottom: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            header, footer {
+                padding: 1.2rem;
+            }
+        }
+
+        /* --- TYPOGRAPHY AND LAYOUT FOR MOBILE (width less than 480px) --- */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px; /* Reduce base font size for mobile */
+                line-height: 1.4;
+            }
+
+            header h1 {
+                font-size: 1.6em;
+                padding: 0.5em 0;
+            }
+
+            .container {
+                padding: 0.8rem;
+            }
+
+            main {
+                padding: 1rem;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            aside {
+                padding: 1rem;
+                border-radius: 0;
+                box-shadow: none;
+                order: -1; /* Keep sidebar at the top */
+            }
+
+            footer {
+                padding: 1rem;
+                font-size: 0.8em;
+            }
+
+            /* Ensure headings are not too large */
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+        }

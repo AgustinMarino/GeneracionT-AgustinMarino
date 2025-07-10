@@ -1,0 +1,124 @@
+/* Estilos por defecto para pantallas grandes (escritorio) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensures the footer stays at the bottom */
+            background-color: #f8f8f8;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        main {
+            flex: 3;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        aside {
+            flex: 1;
+            background-color: #e0e0e0;
+            padding: 1.5rem;
+            margin-left: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: auto; /* Pushes the footer to the bottom */
+        }
+
+        /*
+---
+*/
+
+        /* Media Query for Tablets (screens smaller than 768px) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stacks main content and sidebar vertically */
+                padding: 1rem;
+            }
+
+            main {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem; /* Adds space between main and aside when stacked */
+            }
+
+            aside {
+                margin-left: 0; /* Removes left margin when stacked */
+                margin-top: 0;
+                order: -1; /* Reorders sidebar to appear before main content */
+                margin-bottom: 1.5rem; /* Adds space between sidebar and main */
+            }
+
+            header, footer {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8em; /* Adjusts title font size */
+            }
+        }
+
+        /*
+---
+*/
+
+        /* Media Query for Mobile Devices (screens smaller than 480px) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 0.9em; /* Reduces base font size for better readability */
+            }
+
+            .container {
+                padding: 0.5rem;
+            }
+
+            main {
+                padding: 1rem;
+                border-radius: 0; /* Removes rounded borders for a more "full-width" look */
+                box-shadow: none; /* Removes shadows */
+            }
+
+            aside {
+                padding: 1rem;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            header h1 {
+                font-size: 1.5em; /* Smaller font size for the title */
+            }
+
+            header, footer {
+                padding: 0.8rem;
+            }
+
+            /* Example of reordering sidebar to the end on mobile, if desired */
+            /* aside {
+                order: 1;
+            } */
+        }
