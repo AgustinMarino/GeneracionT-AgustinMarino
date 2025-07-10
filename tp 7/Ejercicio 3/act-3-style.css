@@ -1,0 +1,67 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual ancho */
+    grid-template-rows: repeat(2, 120px); /* Dos filas de 120px de alto */
+
+    /* 1. Ajustar el espaciado entre filas y columnas */
+    gap: 20px; /* shorthand para grid-row-gap y grid-column-gap */
+    /* grid-row-gap: 20px; */ /* También podrías usar estas propiedades individualmente */
+    /* grid-column-gap: 20px; */
+
+    /* 2. Aplicar justify-items y align-items para alinear los elementos dentro de cada celda */
+    /* Alineación horizontal de los items dentro de su celda (por defecto: stretch) */
+    justify-items: center; /* Centra los items horizontalmente */
+    /* Posibles valores: start, end, center, stretch */
+
+    /* Alineación vertical de los items dentro de su celda (por defecto: stretch) */
+    align-items: center; /* Centra los items verticalmente */
+    /* Posibles valores: start, end, center, stretch */
+
+    width: 80%; /* Ancho del contenedor */
+    max-width: 900px;
+    margin: 50px auto; /* Centrar el contenedor en la página */
+    border: 3px solid #0056b3;
+    padding: 20px;
+    background-color: #e0f7fa;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.grid-item {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    /* Estos estilos aseguran que los ítems no siempre se estiren a menos que se les diga */
+    /* Sino, 'justify-items' y 'align-items' no serán tan evidentes si el contenido ya ocupa toda la celda */
+    width: auto; /* Permite que el item tenga su propio ancho */
+    height: auto; /* Permite que el item tenga su propia altura */
+}
+
+/* 3. Utilizar justify-self y align-self en al menos un elemento para modificar su alineación individualmente */
+.item-5 {
+    background-color: #ff4500; /* Color diferente para destacar */
+    /* Anula la alineación horizontal del contenedor para este item */
+    justify-self: start; /* Alinea este item al inicio de su celda horizontalmente */
+    /* Anula la alineación vertical del contenedor para este item */
+    align-self: end; /* Alinea este item al final de su celda verticalmente */
+}
+
+/* Estilos adicionales para los otros ítems para mostrar la diferencia */
+.item-1 { background-color: #4CAF50; }
+.item-2 { background-color: #FFC107; }
+.item-3 { background-color: #9C27B0; }
+.item-4 { background-color: #2196F3; }
+.item-6 { background-color: #E91E63; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}

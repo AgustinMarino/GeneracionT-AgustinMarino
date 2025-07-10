@@ -1,12 +1,11 @@
 .grid-container {
-    display: grid; /* 1. Crear un contenedor con display: grid */
-    grid-template-columns: 150px 150px; /* 2. Definir dos columnas de 150px cada una */
-    margin-left: 41%;
-    grid-template-rows: 100px 100px; /* 2. Definir dos filas de 100px cada una */
-    gap: 10px; /* Espacio entre las celdas (opcional, pero ayuda a visualizar) */
-    border: 3px solid #000000; /* Borde para ver el contenedor */
+    display: grid; 
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 100px 100px;
+    gap: 10px;
+    border: 3px solid #000000;
     padding: 10px;
-    width: fit-content; /* Ajustar el ancho al contenido */
+    width: fit-content;
     border-radius: 10px;
 }
 
@@ -29,4 +28,12 @@
     padding: 5px;
     border: 5px black solid;
     border-radius: 15px;
+    width: 500px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
