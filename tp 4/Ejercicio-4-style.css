@@ -1,0 +1,203 @@
+/* 1. Encontrar 5 maneras distintas de seleccionar el elemento con id #especial y aplicarle un color de fondo distinto en cada caso. */
+/* Manera 1: Por ID directamente (la más común y específica) */
+#especial {
+    background-color: lightcoral;
+}
+
+/* Manera 2: Combinado con un selector de tipo (siempre será el mismo elemento) */
+div#especial {
+    background-color: lightblue; /* Sobreescribe el anterior debido a la cascada y especificidad */
+}
+
+/* Manera 3: Combinado con una clase (si 'especial' también tiene una clase) */
+/* Asumiendo que #especial también tiene la clase 'item' */
+.item#especial {
+    background-color: lightgreen;
+}
+
+/* Manera 4: Usando un selector de atributo para el ID (menos común, pero válido) */
+[id="especial"] {
+    background-color: lightsalmon;
+}
+
+/* Manera 5: Usando el selector universal junto con el ID (menos específico que solo ID) */
+*#especial {
+    background-color: lightseagreen; /* Este será el color final si todas las reglas están en el mismo orden */
+}
+
+
+/* 2. Seleccionar todos los elementos pares de una lista con clase .lista-items y cambiar su color de fondo. */
+.lista-items li:nth-child(even) {
+    background-color: #e0e0e0; /* Gris claro */
+}
+
+/* 3. Utilizar pseudo-clases y pseudo-elementos para modificar la apariencia de elementos específicos. */
+/* Ejemplo de pseudo-clase: :hover para enlaces */
+a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+/* Ejemplo de pseudo-elemento: ::first-line para el primer párrafo de una sección */
+section p::first-line {
+    font-variant: small-caps;
+    color: darkblue;
+}
+
+/* Otro pseudo-elemento: ::before para añadir contenido antes de un h2 */
+h2::before {
+    content: "🚀 ";
+    color: purple;
+}
+
+/* 4. pseudo-selectores, asegurándose de aplicar un estilo visible en cada caso. */
+/* Nota: Ya usamos pseudo-clases y pseudo-elementos en el punto 3. Aquí, podemos mostrar más combinaciones. */
+
+/* Seleccionar el primer elemento de una lista */
+ul li:first-child {
+    font-style: italic;
+    color: brown;
+}
+
+/* Seleccionar el último párrafo de un div */
+div p:last-child {
+    border-bottom: 2px dashed red;
+}
+
+/* Aplicar estilo al texto seleccionado por el usuario */
+::selection {
+    background-color: yellow;
+    color: black;
+}
+
+/* 5. Seleccionar todos los elementos con la clase .destacado y cambiar su color de texto. */
+.destacado {
+    color: blueviolet;
+}
+
+/* 6. Seleccionar el primer párrafo de cada sección y aplicarle una negrita. */
+section p:first-of-type {
+    font-weight: bold;
+}
+
+/* 7. Seleccionar todos los div que sean hijos directos de otro div y ponerles un borde. */
+div > div {
+    border: 2px solid #556B2F; /* Verde oliva oscuro */
+    padding: 5px; /* Para que el borde sea visible */
+}
+
+/* 8. Seleccionar el último elemento de una lista ordenada y cambiar su tamaño de fuente. */
+ol li:last-child {
+    font-size: 1.2em;
+    color: darkgreen;
+}
+
+/* 9. Seleccionar todos los enlaces que no tengan el atributo target="_blank" y subrayarlos. */
+a:not([target="_blank"]) {
+    text-decoration: underline;
+    color: #007bff; /* Azul estándar de enlace */
+}
+
+/* 10. Seleccionar todos los párrafos dentro de un article y cambiar su interlineado. */
+article p {
+    line-height: 1.6; /* Aumenta el interlineado */
+}
+
+/* 11. Seleccionar cualquier h2 que tenga un span dentro y cambiar su color. */
+h2:has(span) { /* Usando :has() - ¡Atención, este es un selector más reciente y no universalmente soportado aún en todos los navegadores! */
+    color: crimson;
+}
+
+/* Si :has() no es una opción, una alternativa es aplicar la regla a h2 y luego sobrescribir para el span.
+   O si el span es el único contenido, seleccionar el span directamente dentro del h2.
+   Ejemplo alternativo si :has() no funciona para tu caso:
+   h2 span {
+       color: crimson; // Esto seleccionaría el span, no el h2
+   }
+   Para el h2 en sí, :has() es la forma directa.
+*/
+
+/* 12. Seleccionar todas las imágenes que tengan un alt definido y agregarles un borde. */
+img[alt] {
+    border: 3px dashed gold;
+    padding: 2px;
+}
+
+/* 13. Seleccionar el tercer elemento de una lista desordenada y ponerle cursiva. */
+ul li:nth-child(3) {
+    font-style: italic;
+    color: darkmagenta;
+}
+
+/* 14. Seleccionar todos los elementos impares de una tabla y cambiar su color de fondo. */
+/* Asumiendo que te refieres a las filas de la tabla (<tr>) */
+table tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Gris muy claro */
+}
+
+/* Si te refieres a celdas impares dentro de una fila (<td>), sería más complejo y específico:
+table td:nth-child(odd) {
+    background-color: #f0f8ff; // Azul Alicia
+}
+*/
+
+/* 15. Seleccionar cualquier div que tenga al menos dos clases y aplicarle una sombra. */
+div[class*=" "] { /* Selecciona divs que tienen un espacio en su atributo class, indicando múltiples clases */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+/* Otra forma si las clases son conocidas o para un caso más específico:
+.clase1.clase2 {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+*/
+
+
+/* 16. Seleccionar los button cuando el usuario pase el cursor sobre ellos y cambiar su color de fondo. */
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+    color: white;
+    cursor: pointer;
+}
+
+/* 17. Seleccionar los input de tipo text dentro de un form y cambiar su borde. */
+form input[type="text"] {
+    border: 2px solid #28a745; /* Borde verde */
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/* 18. Seleccionar cualquier p que siga inmediatamente a un h3 y cambiar su color. */
+h3 + p {
+    color: #B22222; /* Rojo fuego */
+    font-weight: bold;
+}
+
+/* 19. Seleccionar los enlaces cuando el usuario ya los haya visitado y hacerlos más opacos. */
+a:visited {
+    opacity: 0.6; /* Los hace un 60% opacos */
+}
+
+/* 20. Seleccionar todos los elementos strong dentro de un p y cambiar su color. */
+p strong {
+    color: #FF4500; /* Naranja rojizo */
+}
+
+/* 21. Seleccionar cualquier input que esté deshabilitado y ponerlo en color gris. */
+input:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+/* 22. Seleccionar todos los li dentro de un nav y cambiar su espaciado. */
+nav li {
+    padding: 5px 10px; /* Añade espaciado interno */
+    margin-bottom: 5px; /* Añade espaciado entre ítems */
+}
+
+/* 23. Seleccionar todos los elementos que contengan la palabra "importante" en su clase y resaltarlos en negrita. */
+[class*="importante"] { /* El asterisco (*) significa "contiene" */
+    font-weight: bold;
+    color: purple;
+    background-color: yellow; /* Para resaltarlo aún más */
+}
